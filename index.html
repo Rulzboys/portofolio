@@ -40,11 +40,12 @@
     </div>
   </header>
 
-  <!-- Home -->
+  <!-- Home (Statis, bukan Carousel) -->
   <section id="home" class="h-screen flex items-center justify-center pt-20 bg-gradient-to-r from-indigo-100 to-indigo-200" data-aos="fade-up">
-    <div class="text-center">
+    <div class="text-center px-4">
       <h2 class="text-4xl font-bold text-indigo-700">Halo, Saya Syahrur Ramadhani</h2>
       <p class="mt-4 text-lg">Desainer grafis yang fokus pada visual kreatif untuk dunia digital.</p>
+      <p class="mt-2 text-md text-gray-600">Ayo berkolaborasi untuk menciptakan desain yang inspiratif dan berdampak!</p>
     </div>
   </section>
 
@@ -67,8 +68,8 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-20 bg-gradient-to-r from-indigo-100 via-white to-indigo-100">
-    <div class="max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">
+  <section id="skills" class="py-20 bg-gradient-to-r from-indigo-50 to-green-50" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold text-indigo-600 mb-10">Keahlian Desain</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white p-6 rounded-lg shadow flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
@@ -98,62 +99,60 @@
     </div>
   </section>
 
-  <!-- Design Carousel -->
+  <!-- Design Showcase -->
   <section id="design" class="py-20 bg-gradient-to-r from-green-50 to-indigo-50">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold text-indigo-600 mb-10">Karya Desain</h3>
-
-      <div class="swiper mySwiper">
+      
+      <div class="swiper mySwiper relative">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="design1.jpg" alt="Design 1" class="rounded-lg shadow mx-auto" />
+            <img src="design1.jpg" alt="Desain 1" class="rounded-lg shadow mx-auto" />
           </div>
           <div class="swiper-slide">
-            <img src="design2.jpg" alt="Design 2" class="rounded-lg shadow mx-auto" />
+            <img src="design2.jpg" alt="Desain 2" class="rounded-lg shadow mx-auto" />
           </div>
           <div class="swiper-slide">
-            <img src="design3.jpg" alt="Design 3" class="rounded-lg shadow mx-auto" />
+            <img src="design3.jpg" alt="Desain 3" class="rounded-lg shadow mx-auto" />
           </div>
           <div class="swiper-slide">
-            <img src="design4.jpg" alt="Design 4" class="rounded-lg shadow mx-auto" />
+            <img src="design4.jpg" alt="Desain 4" class="rounded-lg shadow mx-auto" />
           </div>
           <div class="swiper-slide">
-            <img src="design5.jpg" alt="Design 5" class="rounded-lg shadow mx-auto" />
+            <img src="design5.jpg" alt="Desain 5" class="rounded-lg shadow mx-auto" />
           </div>
           <div class="swiper-slide">
-            <img src="design6.jpg" alt="Design 6" class="rounded-lg shadow mx-auto" />
+            <img src="design6.jpg" alt="Desain 6" class="rounded-lg shadow mx-auto" />
           </div>
         </div>
         <div class="swiper-pagination mt-6"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <div class="flex justify-center" id="contact">
-    <form onsubmit="sendMessage(event)" class="space-y-6 w-full max-w-lg p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
-      <input type="text" id="nama" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded" required />
-      <input type="email" id="email" placeholder="Email Anda" class="w-full p-3 border border-gray-300 rounded" required />
-      <textarea id="pesan" placeholder="Pesan" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
-      <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 w-full">Kirim Pesan</button>
-    </form>
-  </div>
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="flex justify-center">
+      <form onsubmit="sendMessage(event)" class="space-y-6 w-full max-w-lg p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+        <input type="text" id="nama" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded" required />
+        <input type="email" id="email" placeholder="Email Anda" class="w-full p-3 border border-gray-300 rounded" required />
+        <textarea id="pesan" placeholder="Pesan" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 w-full">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-white py-6 text-center text-sm text-gray-500">
     © 2025 Syahrur Ramadhani. All rights reserved.
   </footer>
 
-  <!-- Script Swiper JS -->
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  <!-- Script AOS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-
-  <!-- Script Custom -->
+  <!-- Script -->
   <script>
     const toggleBtn = document.getElementById('menu-toggle');
     const nav = document.getElementById('mobile-menu');
@@ -173,13 +172,21 @@
     }
 
     window.addEventListener("load", function () {
-      const swiper = new Swiper(".mySwiper", {
+      new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         breakpoints: {
           768: { slidesPerView: 2 },
@@ -187,6 +194,11 @@
         },
       });
     });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
   </script>
 
 </body>
